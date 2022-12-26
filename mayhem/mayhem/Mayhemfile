@@ -1,9 +1,0 @@
-project: wikitextparser
-target: fuzz-wtp
-testsuite:
-    - file://mayhem/testsuite
-
-cmds:
-  - cmd: /src/mayhem/fuzz_wtp.py
-    libfuzzer: true
-    timeout: 12
