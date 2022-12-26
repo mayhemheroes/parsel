@@ -1,0 +1,9 @@
+project: parsel
+target: fuzz-extract
+testsuite:
+    - file://mayhem/testsuite
+
+cmds:
+  - cmd: /src/mayhem/fuzz_extract.py
+    libfuzzer: true
+    timeout: 12
