@@ -1,8 +1,18 @@
 # Build Stage
-FROM fuzzers/atheris:2.0.7-python3.9
+FROM python:3.11-slim
+
+# Install atheris build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    clang \
+    python3-dev \
+    libfuzzer-17-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install atheris
+RUN pip install --no-cache-dir atheris
 
 ADD . /src
 WORKDIR /src
-RUN python3 -m pip install .
+RUN pip install --no-cache-dir .
 
 CMD ["/src/mayhem/fuzz_extract.py"]
