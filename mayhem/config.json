@@ -1,0 +1,6 @@
+{
+  "spec_version": 2,
+  "upstream_default_branch": "master",
+  "language": "python",
+  "fuzz_engine": "atheris"
+}

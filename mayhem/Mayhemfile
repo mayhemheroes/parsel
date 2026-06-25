@@ -1,0 +1,10 @@
+project: parsel
+target: fuzz-extract
+
+testsuite:
+  - file://mayhem/testsuite
+
+cmds:
+  - cmd: /mayhem/fuzz_extract_shim
+    libfuzzer: true
+    timeout: 12
